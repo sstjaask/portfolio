@@ -145,16 +145,17 @@ body {
     background-color:#ddd;
     overflow: hidden;
   }
-  section.content_left { 
+  .content_left { 
     margin: 1% 0 1% 5%;
-    padding: 5%;
     border-radius: 1.562em;
     width: 40%;
     float: left;
     overflow: hidden;
     text-align: center;
+    clear: both;
+    
   }
-  section.content_leftbackg { 
+  .content_leftbackg { 
     background-color: #F7F5EE;
     margin: 1% 0 1% 5%;
     padding: 5%;
@@ -163,8 +164,9 @@ body {
     float: left;
     overflow: hidden;
     text-align: center;
+    clear: both;
   }
-  section.content_right{
+  .content_right{
     background-color: #F7F5EE;
     margin: 1% 5% 1% 0 ;
     padding: 5%;
@@ -172,8 +174,9 @@ body {
     width: 40%;
     float: right;
     overflow: hidden;
+    clear: both;
   }
-  section.content_rightnoback{ 
+  .content_rightnoback{ 
     margin: 1% 5% 0 1%;
     padding: 2%;
     border-radius: 1.562em;
@@ -181,8 +184,9 @@ body {
     float: right;
     overflow: hidden;
     text-align: center;
+    clear: both;
   }
-  section.content_third{
+  .content_third{
     background-color: #F7F5EE;
     margin: 5% 5% 5% 5% ;
     padding: 0.5em;
@@ -191,8 +195,9 @@ body {
     float: left;
     overflow: hidden;
     text-align: center;
+    clear: both;
   }
-  section.content_thirdnobgr{
+  .content_thirdnobgr{
       background-color: none;
       margin: 5% 5% 5% 5% ;
       padding: 0.5em;
@@ -201,6 +206,7 @@ body {
       float: left;
       overflow: hidden;
       text-align: center;
+      clear: both;
     }
   .h {
     margin-left: 5%;
@@ -340,14 +346,15 @@ body {
   .right {
     left: 0%;
     }
-  section.content_left, section.content_right, section.content_third, section.content_leftbackg { 
+  .content_left, .content_right, .content_third, .content_leftbackg { 
     width: 90%;
     margin: 5% 5% 5% 5%;
     }
+
   img {
     margin: 1% 1% 1% 1%;
     text-align: center;
-    width: 60%;
+    width: 50%;
     text-align: center;
   }
   i.fas {
@@ -380,7 +387,7 @@ body {
       text-align: left;
     }
     .hero h1 {
-      font-size: 40px;
+      font-size: 2.5em;
     }
     .hero {
       padding: 0.5em

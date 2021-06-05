@@ -67,6 +67,7 @@ footer {
   height: max-content;
 }
 /*NAVIGAATIOPALKIN MÄÄRITYS*/
+/* Style the buttons */
 .topnav {
   background-color: #333;
   overflow: hidden;
@@ -102,18 +103,6 @@ footer {
 .topnav .icon {
   display: none;
 }
-  /* Position the navbar container inside the image */
-.container {
-  position: absolute;
-  margin: 20px;
-  width: auto;
-}
-  
-  /* The navbar */
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
 
 /* HERON MÄÄRITYS ALKAA */
 .hero {
@@ -137,7 +126,7 @@ footer {
   margin-bottom: 0.5em;
   font-family: 'Limelight', cursive;
 }
-/* TÄTÄ EI TARVITA???
+/*
 .hero .btn {
   display: block;
   width: 12.5em;
@@ -150,23 +139,28 @@ footer {
   text-decoration: none;
   font-size: 1.5em;
   border: 3px solid white; 
-}*/
+} */
 /* SISÄLTÖ */
 section {
   background-color:#ddd;
   overflow: hidden;
 }
-section.content_left { 
-  background-color: none;
+.content_main {
+  border: 1px solid black;
+  height: max-content;
+  width: 90%;
+  margin: auto;
+}
+.content_left { 
   margin: 1% 0 1% 5%;
-  padding: 0 5% 0 5%;
   border-radius: 1.562em;
   width: 40%;
   float: left;
   overflow: hidden;
   text-align: center;
+
 }
-section.content_leftbackg { 
+.content_leftbackg { 
   background-color: #F7F5EE;
   margin: 1% 0 1% 5%;
   padding: 5%;
@@ -176,7 +170,7 @@ section.content_leftbackg {
   overflow: hidden;
   text-align: center;
 }
-section.content_right{
+.content_right{
   background-color: #F7F5EE;
   margin: 1% 5% 1% 0 ;
   padding: 5%;
@@ -185,8 +179,8 @@ section.content_right{
   float: right;
   overflow: hidden;
 }
-section.content_rightnoback{ 
-  margin: 1% 5% 0 1%;
+.content_rightnoback{ 
+  margin: 1% 5% 1% 0;
   padding: 2%;
   border-radius: 1.562em;
   width: 40%;
@@ -194,7 +188,7 @@ section.content_rightnoback{
   overflow: hidden;
   text-align: center;
 }
-section.content_third{
+.content_third{
   background-color: #F7F5EE;
   margin: 5% 5% 5% 5% ;
   padding: 0.5em;
@@ -204,7 +198,7 @@ section.content_third{
   overflow: hidden;
   text-align: center;
 }
-section.content_thirdnobgr{
+.content_thirdnobgr{
     background-color: none;
     margin: 5% 5% 5% 5% ;
     padding: 0.5em;
@@ -214,13 +208,21 @@ section.content_thirdnobgr{
     overflow: hidden;
     text-align: center;
   }
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 .h {
   margin-left: 5%;
   color: rgb(83, 3, 56);
 }
-.h2 {
-  margin-left: 5%;
+.h2, .h3{
+  text-align: center;
   color: rgb(83, 3, 56);
+}
+.h3 {
+  font-size: 2em;
 }
 img {
   width: auto;
@@ -262,29 +264,26 @@ i.fas {
 }
 
 /* The circles on the timeline */
-/* .container::after {
+.container::after {
   content: '';
   position: absolute;
   width: 25px;
   height: 25px;
   right: -17px;
   background-color: white;
-  border: 4px solid #FF9F55;
+  border: 4px solid rgb(83, 3, 56);
   top: 15px;
   border-radius: 50%;
   z-index: 1;
-} */
-
+}
 /* Place the container to the left */
 .left {
   left: 0;
 }
-
 /* Place the container to the right */
 .right {
   left: 50%;
 }
-
 /* Add arrows to the left container (pointing right) */
 .left::before {
   content: " ";
@@ -312,12 +311,10 @@ i.fas {
   border-width: 10px 10px 10px 0;
   border-color: transparent white transparent transparent;
 }
-
 /* Fix the circle for containers on the right side */
 .right::after {
   left: -16px;
 }
-
 /* The actual content */
 .content {
   padding: 20px 30px;
@@ -328,40 +325,44 @@ i.fas {
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 600px) {
-/* Place the timelime to the left */
-  .timeline::after {
-    left: 31px;
-  }
-
-/* Full-width containers */
-  .container {
-    width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
-  }
-
-/* Make sure that all arrows are pointing leftwards */
-  .container::before {
-    left: 60px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
-  }
-
-/* Make sure all circles are at the same spot */
-  .left::after, .right::after {
-    left: 15px;
-  }
-
-/* Make all right containers behave like the left ones */
-  .right {
-    left: 0%;
-  }
+  /* Place the timelime to the left */
+.timeline::after {
+left: 31px;
 }
+  
+  /* Full-width containers */
+.container {
+width: 100%;
+padding-left: 70px;
+padding-right: 25px;
+}
+  
+  /* Make sure that all arrows are pointing leftwards */
+.container::before {
+left: 60px;
+border: medium solid white;
+border-width: 10px 10px 10px 0;
+border-color: transparent white transparent transparent;
+}
+
+  /* Make sure all circles are at the same spot */
+.left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+.right {
+  left: 0%;
+  }
+.content_left, .content_right, .content_third, .content_leftbackg { 
+  width: 90%;
+  margin: 5% 5% 5% 5%;
+  }
+
 img {
   margin: 1% 1% 1% 1%;
   text-align: center;
-  width: 60%;
+  width: 50%;
   text-align: center;
 }
 i.fas {
@@ -370,7 +371,7 @@ i.fas {
   padding-top: 0;
   padding-left: 0.625em;
   padding-right: 0.625em;
-  
+  }
 }
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {display: none;}
@@ -379,10 +380,11 @@ i.fas {
     display: block;
   }
 }
-
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 @media screen and (max-width: 600px) {
-  .topnav.responsive {position: fixed;}
+  .topnav.responsive {
+    position: fixed;
+  }
   .topnav.responsive a.icon {
     position: fixed;
     right: 0;
@@ -392,9 +394,10 @@ i.fas {
     float: none;
     display: block;
     text-align: left;
+    width: 90%;
   }
   .hero h1 {
-    font-size: 40px;
+    font-size: 2.5em;
   }
   .hero {
     padding: 0.5em
@@ -402,8 +405,4 @@ i.fas {
   .heading {
     font-size: 1.5em;
   }
-  section.content_thirdnobg {
-    width: 95%;
-  }
-  
 }
